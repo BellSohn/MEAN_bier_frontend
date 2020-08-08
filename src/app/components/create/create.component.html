@@ -1,0 +1,54 @@
+<div class="container" *ngIf="bier">
+	<h2>{{title}}</h2><!--<a [routerLink]="['bier',bier._id]">-->
+	<div class="message success" *ngIf="status == 'success'">		
+		A new Bier was stored in our site!,check it <a [routerLink]="['/bier-detail',save_bier._id]">here</a>
+	</div>
+	<div class="message failed" *ngIf="status == 'failed'">
+		Ups!,something went wrong...
+	</div>
+	<form #bierForm="ngForm" (ngSubmit)="onSubmit(bierForm)">
+		<p>
+			<label for="name">name</label>
+			<input type="text" name="name" #name="ngModel" [(ngModel)]="bier.name" required/>
+			<span *ngIf="name.touched && !name.valid">name is obligytory</span>
+		</p>	
+		<p>
+			<label for="country">country</label>
+			<input type="text" name="country" #country="ngModel" [(ngModel)]="bier.country" required/>
+			<span *ngIf="country.touched && !country.valid">country is obligytory</span>
+		</p>
+		<p>
+			<label for="description">description</label>
+			<textarea name="description" #description="ngModel" [(ngModel)]="bier.description" required></textarea>
+			<span *ngIf="description.touched && !description.valid">tell us something!</span>
+		</p>	
+		<p>
+			<label for="category">category</label>
+			<input type="text" name="category" #category="ngModel" [(ngModel)]="bier.category" required/>
+			<span *ngIf="category.touched && !category.valid">ale,lager,stout...</span>
+		</p>	
+		<p>
+			<label for="ingredients">ingredients</label>
+			<input type="text" name="ingredients" #ingredients="ngModel" [(ngModel)]="bier.ingredients" required>
+			<span *ngIf="ingredients.touched && !ingredients.valid">wheat or barley?</span>
+		</p>
+		<p>
+			<label for="foundation">year of foundation</label>
+			<input type="text" name="foundation" #foundation="ngModel" [(ngModel)]="bier.foundation" required>
+			<span *ngIf="foundation.touched && !foundation.valid">aproximately</span>
+		</p>
+		<p>
+			<label for="image">Bier image</label>
+			<span *ngIf="bier.image">
+				<img src="{{url+'/get-image/'+bier.image}}" width="100"/>	
+			</span>
+			<input type="file" name="image" placeholder="upload image" (change)="
+			fileChangeEvent($event)"/>
+		</p>
+		<input type="submit" value="upload info" [disabled]="!bierForm.form.valid">
+
+		
+		
+	</form>
+</div>
+

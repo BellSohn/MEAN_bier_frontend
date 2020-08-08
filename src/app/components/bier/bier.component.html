@@ -1,0 +1,15 @@
+<div class="container">
+	<h2>Biers</h2>
+	<ul>	<!--<a [routerLink]="['/bier',save_bier._id]">here</a>-->
+		<li *ngFor="let bier of biers" class="bier">
+		<a [routerLink]="['/bier-detail',bier._id]">
+			<div class="image">
+			<img src="{{url+'/get-image/'+bier.image}}" *ngIf="bier.image">	
+			</div>
+			
+			<h3>{{ bier.name }}</h3>
+			<p>{{ bier.country }}</p>
+		</a>
+		</li>
+	</ul>
+</div>

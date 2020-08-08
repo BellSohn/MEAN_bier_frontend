@@ -1,0 +1,16 @@
+<div class="container" *ngIf="bier">
+	<div class="image">
+			<img src="{{url+'/get-image/'+bier.image}}" *ngIf="bier.image">	
+	</div>
+	<div class="data">
+	<h1>{{bier.name}}</h1>
+	<h3>{{bier.country}}</h3>
+	<p>{{bier.description}}</p>	
+	<p>{{bier.category}}</p>
+	<p>
+		<a [routerLink]="['/edit',bier._id]" class="btn btn-edit">Editar</a>
+	</p>
+	</div>
+
+	
+</div>
