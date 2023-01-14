@@ -28,8 +28,7 @@ export class BierComponent implements OnInit {
   getBiers(){
 
   	this._bierService.getBiers().subscribe(
-  		response =>{
-  			//console.log(response);
+  		response =>{  			
   			if(response.biers){
   				this.biers = response.biers;
   			}
