@@ -1,5 +1,5 @@
 <div class="container" *ngIf="bier">
-	<h2>{{title}}</h2><!--<a [routerLink]="['bier',bier._id]">-->
+	<h2>{{title}}</h2>
 	<div class="message success" *ngIf="status == 'success'">		
 		A new Bier was stored in our site!,check it <a [routerLink]="['/bier-detail',save_bier._id]">here</a>
 	</div>
