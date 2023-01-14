@@ -7,7 +7,7 @@ import { Global } from './global';
 @Injectable()
 
 export class BierService{
-	/*aqui guardamos la url del api*/
+	/*here we keep the api url*/
 	public url:string;
 	
 
@@ -29,7 +29,6 @@ export class BierService{
 
 			let params = JSON.stringify(bier);
 			let headers = new HttpHeaders().set('Content-Type','application/json');
-
 
 			return this._http.post(this.url+'save-bier',params,{headers:headers});
 
