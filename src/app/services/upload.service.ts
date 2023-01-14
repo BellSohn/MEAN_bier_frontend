@@ -3,7 +3,8 @@ import { Global } from './global';
 
 
 @Injectable()
-/*este servicio hay que importarlo desde el create.component.ts*/
+
+/*this service should be imported from create.component.ts*/
 export class UploadServices{
 
 	public url:string;
@@ -12,13 +13,13 @@ export class UploadServices{
 		this.url = Global.url;
 	}
 
-	/*este método,me permite hacer una peticion ajax clásica,en la que 
-	adjuntamos un archivo para subir*/
+	
+  /*this method, allows me to do a classic ajax request,in which we attached a file to upload*/
 	makeFileRequest(url:string,params:Array<string>,files:Array<File>,name:string){
 
 		return new Promise(function(resolve,reject){
-
-			/*para subir archivos,necesitamos simular un formulario clásico*/
+			
+      /*to upload files,we need to simulate a clasic form*/
 			var formData:any = new FormData();
 			var xhr = new XMLHttpRequest();
 
@@ -41,7 +42,7 @@ export class UploadServices{
 			
 		});
 
-	}//end makeFileRequest
+	}
 
 
 
