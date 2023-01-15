@@ -7,8 +7,7 @@ import { Router,ActivatedRoute,Params} from '@angular/router';
 
 
 @Component({
-  selector: 'app-edit',
- // templateUrl: './edit.component.html',
+  selector: 'app-edit', 
  templateUrl:'../create/create.component.html',
   styleUrls: ['./edit.component.css'],
   providers: [BierService,UploadServices]
@@ -60,13 +59,12 @@ export class EditComponent implements OnInit {
   			response =>{
   				 if(response.bier){
              
-                //subimos la imagen
+                //image upload
                 if(this.filesToUpload){
 
                 	 this._uploadServices.makeFileRequest(Global.url+"upload-image/"+response.bier._id
-           ,[],this.filesToUpload,'image').then((result:any)=>{
-               
-                  /*console.log(result);*/
+           ,[],this.filesToUpload,'image').then((result:any)=>{               
+                  
                   this.save_bier = result.bier;
                    this.status = 'success';
                   
@@ -88,8 +86,7 @@ export class EditComponent implements OnInit {
   		);
   	}
 
-  	fileChangeEvent(fileInput:any){
-          //console.log(fileInput);
+  	fileChangeEvent(fileInput:any){          
           this.filesToUpload = <Array<File>>fileInput.target.files;/*asi seleccionamos to
           dos los archivos que seleccionamos con el input*/
         }
