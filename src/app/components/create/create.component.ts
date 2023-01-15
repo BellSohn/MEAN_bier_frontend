@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-//importar el modelo y el servicio
+//import model and service
 import { Bier } from '../../models/bier';
 import { BierService } from '../../services/bier.service';
 import { UploadServices } from '../../services/upload.service';
@@ -39,25 +39,23 @@ export class CreateComponent implements OnInit {
   }
 
 		onSubmit(form){
-
-  			//console.log(this.bier);
-        //aqui guardamos los datos basicos del formulario
+      
+        //storing form basic data
         this._bierService.saveBier(this.bier).subscribe(
 
           response => {
             console.log(response);
             if(response.bier){
              
-                //subimos la imagen
+                //upload the image
                 if(this.filesToUpload){
 
                    this._uploadServices.makeFileRequest(Global.url+"upload-image/"+response.bier._id
-           ,[],this.filesToUpload,'image').then((result:any)=>{
-               
-                  /*console.log(result);*/
+           ,[],this.filesToUpload,'image').then((result:any)=>{              
+                  
                   this.save_bier = result.bier;
                    this.status = 'success';
-                   form.reset(); //asi vaciamos los campos del formulario
+                   form.reset(); //make the form fields empty
                 });
 
           }else{
@@ -81,10 +79,9 @@ export class CreateComponent implements OnInit {
   		}
 
 
-        fileChangeEvent(fileInput:any){
-          //console.log(fileInput);
-          this.filesToUpload = <Array<File>>fileInput.target.files;/*asi seleccionamos to
-          dos los archivos que seleccionamos con el input*/
+        fileChangeEvent(fileInput:any){          
+          this.filesToUpload = <Array<File>>fileInput.target.files;
+          /*so select all the files we select with the input*/
         }
 
 }
