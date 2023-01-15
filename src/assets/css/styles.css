@@ -1,4 +1,4 @@
-/*importar fuentes*/
+/*import letter sources*/
 
 @font-face{
 	font-family: 'CuprumBold';
@@ -25,7 +25,7 @@
 	src:url('fonts/Jua-Regular.ttf');
 }
 
-/*estilos generales*/
+/*general styles*/
 
 *{
 	margin:0px;
@@ -38,8 +38,8 @@ body{
 	font-family: 'Jua';
 	font-size: 20px;
 	background: url('../images/fondo.jpg');
-	/*con esta ppda se queda el fondo fijado, de este modo
-	no se necesita,en el header,darle un position:fixed; */
+	/*with this property the back is fixed, this way
+	we don´t need,in the header,set; position:fixed; */
 	background-attachment:fixed;
 }
 
@@ -55,7 +55,7 @@ header{
 	width:100%;
 	height:150px;
 	background: rgba(228,225,191,1);
-	/*asi fijamos el menu,arriba*/
+	/*this way fix the menu,up*/
 	position:fixed;
 	text-transform: uppercase;
 	text-indent: 21px;
@@ -90,7 +90,7 @@ header a:hover,.actived{
 	background: rgba(0,234,0,0.8);
 }
 
-/*Logotipo*/
+/*Logotype*/
 
 #logo{
 	margin-top: 20px;
@@ -99,14 +99,11 @@ header a:hover,.actived{
 }	
 
 
-/*Contendor principal*/
+/*main container*/
 
 #content{
-	width: 75%;
-	/*min-height: 800px;
-	height: auto;*/
+	width: 75%;	
 	display: table;
-
 	margin: 0px auto;
 	box-shadow: 0px 0px 40px black;
 	border-left: 1px solid yellow;
@@ -114,7 +111,7 @@ header a:hover,.actived{
 	padding-top: 120px;
 }
 
-/*pie de pagina*/
+/*page foot*/
 
 footer{
 	width: 75%;
@@ -155,7 +152,7 @@ font-size: 20px;
 }
 
 
-/*sección con formulario*/
+/*section with form*/
 
 .container{
 	padding:50px;
@@ -168,8 +165,7 @@ font-size: 20px;
 	width: 47%;
 }
 
-.container .image img{
-	
+.container .image img{	
 	width: 100%;
 }
 
